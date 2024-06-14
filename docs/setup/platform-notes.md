@@ -1,13 +1,12 @@
 ---
-description: Notes for each platforms.
+description: Learn how to solve various issues with Lite XL in certain platforms.
 ---
 
 ## Windows
 
 ### Portable application
 
-The installer provides a "Portable Mode" checkbox which can be used to extract
-Lite XL into a directory.
+The installer provides a "Portable Mode" checkbox which can be used to extract Lite XL into a directory.
 If this mode is enabled, the installer will not allow user to uninstall Lite XL
 from the Settings / Control Panel.
 Users can just delete the installation folder.
@@ -15,17 +14,16 @@ Users can just delete the installation folder.
 !!! note
     This is **different** from the Portable Mode mentioned in [Getting Started][1].
     The Portable Mode checkbox will not create the `user` directory,
-    thus the install **will use the user's configuration**.
+    thus the installation **will use the user's configuration**.
 
 ### 32-bit support
 
 32-bit builds of Lite XL are provided, but they are not actively tested for bugs.
-These builds has platform suffix "i386".
+These builds have platform suffix "i386".
 
 ### Custom window decoration
 
-Windows users may notice that the title bar (window decoration) does not follow
-device theme.
+Windows users may notice that the title bar (window decoration) does not follow device theme.
 This is a known [upstream issue][2] related to SDL.
 
 In the meantime, there are a few workarounds:
@@ -99,7 +97,7 @@ Lite XL will draw a client-side decoration.
 === "Settings UI"
 
     Toggle the "Borderless" checkbox under _Core_ > _User Interface_.
-    ![screenshot indicating the borderless checkbox][3]{ loading=lazy }
+    ![screenshot indicating the borderless checkbox][4]{ loading=lazy }
 
 
 [1]: ./getting-started.md

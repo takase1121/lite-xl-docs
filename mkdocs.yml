@@ -45,7 +45,7 @@ extra_javascript:
   - javascripts/search.js
 
 extra:
-  lite_xl_version: v2.1.1
+  lite_xl_version: v2.1.3
   version:
     provider: mike
   social:
@@ -93,6 +93,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.smartsymbols
+  - pymdownx.saneheaders
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
@@ -120,14 +122,15 @@ nav:
   - "Home": index.md
   - "Set Up":
       - "Getting Started": setup/getting-started.md
-      - "Install from Releases": setup/install-from-releases.md
       - "Install from Package Managers": setup/install-from-package-managers.md
-      - "Building": setup/building.md
-      - "Platform-specific notes": setup/platform-notes.md
+      - "Building from Source": setup/building-from-source.md
+      - "Platform-Specific Notes": setup/platform-notes.md
   - "User Guide":
       - "Introduction": user-guide/introduction.md
       - "Configuration": user-guide/configuration.md
-      - "Plugins": user-guide/plugins.md
+      - "Managing Plugins": user-guide/managing-plugins.md
+      - "IDE Setup": "user-guide/ide-setup.md"
+      - "Language Server support": user-guide/lsp.md
       - "Keymap": user-guide/keymap.md
       - "macOS Keymap": user-guide/macos-keymap.md
   - "Developer Guide":
@@ -142,6 +145,8 @@ nav:
       - "Documents": developer-guide/documents.md
       - "Views": developer-guide/views.md
       - "Examples of Custom Views": developer-guide/views-examples.md
+      - "Background Tasks": developer-guide/background-tasks.md
+      - "Debugging": developer-guide/debugging.md
       - "Using Regular Expressions": developer-guide/using-regular-expressions.md
       - "Interacting with the OS": developer-guide/interacting-with-the-os.md
       - "Child Processes": developer-guide/child-processes.md

@@ -1,75 +1,38 @@
 ---
-description: An introduction about Lite XL's concepts
-              and how they tie in to plugin development.
+description: An introduction about Lite XL's concepts and how they tie in to plugin development.
 ---
 
-Lite XL has little functionalities without plugins —
-anything that can be implemented as plugins can and _will_ be implemented as one.
+Lite XL has little functionalities without plugins — anything that can be implemented as plugins can
+and _will_ be implemented as one.
 
 Lite XL is mostly written in Lua 5.4.
 If you want to write plugins, you need to know how to write Lua.
-There are various resources such as the [Lua 5.4 Reference Manual][1],
-[Programming in Lua][2], [Learn Lua in 15 Minutes][3],
-[Lua Tutorial at TutorialsPoint][4] and [Lua Tutorial at lua-users.org][5].
+There are various resources such as the [Lua 5.4 Reference Manual][1], [Programming in Lua][2],
+[Learn Lua in 15 Minutes][3], [Lua Tutorial at TutorialsPoint][4] and [Lua Tutorial at lua-users.org][5].
 
-You will also need general programming knowledge and some experience with
-object-oriented programming.
+You will also need general programming knowledge and some experience with object-oriented programming.
 
 !!! note "Some of these tutorials target older versions of Lua and may be less relevant."
+    The latest version of Lite XL uses Lua 5.4.6, while older versions uses Lua 5.2
+    and LuaJIT.
+    These versions have breaking changes that has to be accounted when following the tutorials.
 
 ## Overview
 
 Lite XL is a fork of [lite][6].
 As such, a lot of concepts used in lite is inherited in Lite XL.
-[Lite: An Implementation Overview][7] is an excellent article that explains
-many concepts about lite.
+[Lite: An Implementation Overview][7] is an excellent article that explains many concepts about lite.
 
 ## Types of plugins
 
 There are a few types of plugins.
 Syntaxes and colors are considered as subset of plugins.
-These subsets of plugins only interact with the syntax highlighter
-and the `style` table respectively.
+These subsets of plugins only interact with the syntax highlighter and the `style` table respectively.
 
-## Tips and tricks
+## Interactive debugging
 
-Here are some tips for plugin developers.
-
-### Interactive debugging
-
-Other than using GDB to debug the C part of Lite XL,
-you can also debug the Lua part with [lite-debugger][8].
-To use the debugger, install it as a plugin and call
-`command.perform "debugger:break"` to stop the VM and
-start debugging interactively.
-
-### Differing stack traces on a critical error
-
-On an older version of Lite XL, the stack trace printed on the terminal
-when a critical error occur may differ with the stack trace printed
-in `error.txt`.
-In this case, the stack trace in `error.txt` is more complete and
-should be referred.
-This is a bug and will be fixed in future versions of Lite XL.
-
-### `print()` function does not work in Windows
-
-On Windows, we compile Lite XL using the GUI subsystem by default.
-This causes Lite XL to close the stdout.
-To work around this behavior, you can force Lite XL to keep
-stdout open by redirecting its output in a terminal.
-
-On PowerShell:
-
-```powershell
-./lite-xl | tee -variable null
-```
-
-On `cmd.exe`:
-
-```batch
-./lite-xl > NUL
-```
+Other than using GDB to debug the C part of Lite XL, you can also debug the Lua part with [lite-debugger][8].
+Follow [this guide][9] to learn how it works.
 
 
 [1]: https://www.lua.org/manual/5.4/
@@ -80,12 +43,4 @@ On `cmd.exe`:
 [6]: https://github.com/rxi/lite
 [7]: https://rxi.github.io/lite_an_implementation_overview.html
 [8]: https://github.com/lite-xl/lite-xl-plugins/blob/master/plugins/lite-debugger.lua?raw=1
-[Creating Syntaxes]:           creating-syntaxes.md
-[Creating Themes]:             creating-themes.md
-[Simple Plugin]:               simple-plugin.md
-[Commands]:                    commands.md
-[Managing Keyboard Shortcuts]: managing-keyboard-shortcuts.md
-[Classes and Objects]:         classes-and-objects.md
-[Using Regular Expressions]:   using-regular-expressions.md
-[Interacting with the OS]:     interacting-with-the-os.md
-[Child Processes]:             child-processes.md
+[9]: ./debugging.md
