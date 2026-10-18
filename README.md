@@ -41,6 +41,18 @@ refresh if changes were made.
 To build the website, run `uv run mkdocs build`.
 The website will be built in the `site/` directory.
 
+## Hugo preview
+
+The website is being migrated to [Hugo] with the [Hextra] theme.
+The new website lives in `hugo/` and is deployed side by side at `/next/`.
+
+To preview it, install [Hugo] (extended, v0.146.0 or later) and [Go], then run:
+
+```sh
+$ cd hugo
+$ hugo server
+```
+
 ## Configuration
 
 There are a few options configurable by the user via environment variables.
@@ -105,3 +117,6 @@ This can be found in `fix-keymap.py`.
 [GTK Runtime]:          https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer
 [uv]:                   https://docs.astral.sh/uv/
 [pymdown]:              https://facelessuser.github.io/pymdown-extensions/extensions/keys
+[Hugo]:                 https://gohugo.io/
+[Hextra]:               https://imfing.github.io/hextra/
+[Go]:                   https://go.dev/

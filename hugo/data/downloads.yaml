@@ -1,0 +1,41 @@
+# Release downloads shown by the downloads shortcode on the getting-started page.
+# In file names, {version} is replaced by the current Lite XL version (e.g. v2.1.7).
+
+release: https://github.com/lite-xl/lite-xl/releases/download/{version}/
+source: https://github.com/lite-xl/lite-xl/archive/refs/tags/
+
+platforms:
+  - name: Windows
+    icon: windows
+    requirement: For Windows 7 Service Pack 2 and above.
+    instructions: { label: Installation Instructions, link: "#windows" }
+    files:
+      - { label: 64-bit Installer, file: "LiteXL-{version}-addons-x86_64-setup.exe" }
+      - { label: 64-bit ZIP, file: "lite-xl-{version}-addons-windows-x86_64.zip" }
+      - { label: 32-bit Installer, file: "LiteXL-{version}-addons-i686-setup.exe" }
+      - { label: 32-bit ZIP, file: "lite-xl-{version}-addons-windows-i686.zip" }
+
+  - name: Linux
+    icon: linux
+    requirement: For Ubuntu 18.04 and above.
+    instructions: { label: Installation Instructions, link: "#linux" }
+    files:
+      - { label: 64-bit AppImage, file: "LiteXL-{version}-addons-x86_64.AppImage" }
+      - { label: 64-bit tarball, file: "lite-xl-{version}-addons-linux-x86_64-portable.tar.gz" }
+
+  - name: macOS
+    icon: apple
+    requirement: For OSX El Capitan and above.
+    instructions: { label: Installation Instructions, link: "#macos" }
+    files:
+      - { label: Intel Mac DMG, file: "lite-xl-{version}-addons-macos-x86_64.dmg" }
+      - { label: Apple Silicon Mac DMG, file: "lite-xl-{version}-addons-macos-arm64.dmg" }
+      - { label: Universal DMG, file: "lite-xl-{version}-addons-macos-universal.dmg" }
+
+  - name: Source Code
+    icon: code
+    requirement: "[Meson](https://mesonbuild.com/) and a C11 compiler needed."
+    instructions: { label: Build Instructions, link: "building-from-source.md" }
+    files:
+      - { label: Source tarball, file: "{version}.tar.gz", base: source }
+      - { label: Source ZIP, file: "{version}.zip", base: source }

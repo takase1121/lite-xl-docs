@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [master]
-    paths-ignore: ['docs/assets/keymap*.json', 'README.md']
+    paths-ignore: ['docs/assets/keymap*.json', 'README.md', 'tools/**']
 
 jobs:
   version:
@@ -103,6 +103,27 @@ jobs:
           CARDS: 'true'
           LITE_XL_VERSION: ${{ needs.version.outputs.lxl }}
         run: npm run build
+
+      - name: Install Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: hugo/go.mod
+          cache-dependency-path: hugo/go.sum
+
+      - name: Install Hugo
+        env:
+          HUGO_VERSION: 0.168.0
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Build preview
+        working-directory: hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+          HUGO_PARAMS_LITEXLVERSION: ${{ needs.version.outputs.lxl }}
+        run: hugo --minify --config hugo.yaml,preview.yaml --baseURL "${SITE_URL%/}/next/" -d ../site/next
 
       - name: Upload page artifact
         uses: actions/upload-pages-artifact@v4

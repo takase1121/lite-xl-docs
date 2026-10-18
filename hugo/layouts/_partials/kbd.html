@@ -1,0 +1,19 @@
+{{- /*
+Renders a key combination such as "ctrl+shift+p", in the same markup as
+pymdownx.keys. Labels come from data/keys.yaml.
+
+@param {string} . The key combination.
+*/ -}}
+{{- $keys := hugo.Data.keys -}}
+{{- $out := slice -}}
+{{- range split (lower .) "+" -}}
+  {{- $name := index $keys.aliases . | default . -}}
+  {{- $label := index $keys.labels $name -}}
+  {{- if not $label -}}
+    {{- warnf "kbd: no label for key %q" $name -}}
+    {{- $label = $name | title -}}
+  {{- end -}}
+  {{- $out = $out | append (printf `<kbd class="key-%s">%s</kbd>` $name (htmlEscape $label)) -}}
+{{- end -}}
+<span class="keys">{{ delimit $out "<span>+</span>" | safeHTML }}</span>
+{{- /* trim */ -}}

@@ -1,0 +1,46 @@
+{{- /*
+Renders download cards for the current release from data/downloads.yaml.
+
+@example {{< downloads >}}
+*/ -}}
+{{- $data := hugo.Data.downloads -}}
+{{- $version := partial "lite-xl-version.html" . -}}
+{{- $page := .Page -}}
+
+<div class="downloads not-prose">
+  {{- range $data.platforms }}
+    <div class="downloads-card">
+      <p class="downloads-title">
+        {{- partial "utils/icon.html" (dict "name" .icon "attributes" `height=24 aria-hidden="true"`) -}}
+        <strong>{{ .name }}</strong>
+      </p>
+      <p class="downloads-requirement">{{ .requirement | $page.RenderString }}</p>
+      <ul>
+        {{- range .files }}
+          {{- $base := index $data (.base | default "release") -}}
+          {{- $url := replace (print $base .file) "{version}" $version -}}
+          <li><a href="{{ $url }}">
+            {{ .label }}
+            {{- if site.Params.externalLinkDecoration -}}
+              {{- partial "utils/icon.html" (dict "name" "arrow-up-right" "attributes" `height=1em aria-hidden="true"`) -}}
+            {{- end -}}
+          </a></li>
+        {{- end }}
+      </ul>
+      {{- with .instructions }}
+        {{- $link := .link -}}
+        {{- if strings.HasSuffix $link ".md" -}}
+          {{- with $page.GetPage (path.Join $page.File.Dir (strings.TrimSuffix ".md" $link)) -}}
+            {{- $link = .RelPermalink -}}
+          {{- else -}}
+            {{- errorf "downloads: page %q not found" $link -}}
+          {{- end -}}
+        {{- end }}
+        <a class="downloads-more" href="{{ $link }}">
+          {{- partial "utils/icon.html" (dict "name" "arrow-right" "attributes" `height=16 aria-hidden="true"`) -}}
+          {{ .label }}
+        </a>
+      {{- end }}
+    </div>
+  {{- end }}
+</div>

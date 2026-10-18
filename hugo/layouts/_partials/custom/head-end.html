@@ -1,0 +1,3 @@
+{{- /* Loaded on every page so keymap tables work after client-side navigation. */ -}}
+{{- $js := resources.Get "js/keymap.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

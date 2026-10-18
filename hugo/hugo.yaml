@@ -1,0 +1,136 @@
+baseURL: https://lite-xl.com/
+locale: en
+title: Lite XL
+enableGitInfo: true
+enableEmoji: true
+enableRobotsTXT: true
+
+module:
+  imports:
+    - path: github.com/imfing/hextra
+  mounts:
+    - { source: content, target: content }
+    - { source: data, target: data }
+    - { source: layouts, target: layouts }
+    - { source: assets, target: assets }
+    - { source: static, target: static }
+    - { source: i18n, target: i18n }
+    - source: ../docs/assets
+      target: data/keymaps
+      files: ["keymap*.json"]
+
+cascade:
+  - target:
+      kind: "{section,page}"
+    type: docs
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      attribute:
+        block: true
+        title: true
+  highlight:
+    noClasses: false
+
+outputs:
+  page: [html, markdown]
+  section: [html, rss, markdown]
+
+params:
+  description: Lightweight and powerful code editor, available for Windows, Linux and macOS.
+  # overridden in CI with HUGO_PARAMS_LITEXLVERSION;
+  liteXLVersion: ""
+  sourceRepo: https://github.com/lite-xl/lite-xl
+
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: assets/icon.svg
+      dark: assets/icon.svg
+    width: wide
+
+  page:
+    width: wide
+    tabs:
+      sync: true
+    contextMenu:
+      enable: true
+
+  footer:
+    displayCopyright: false
+    displayPoweredBy: false
+
+  editURL:
+    enable: true
+    base: https://github.com/lite-xl/lite-xl.github.io/edit/master/hugo/content
+
+  displayUpdatedDate: true
+  dateFormat: January 2, 2006
+
+  imageZoom:
+    enable: true
+
+  search:
+    enable: true
+    type: flexsearch
+    flexsearch:
+      index: content
+
+  highlight:
+    copy:
+      enable: true
+      display: hover
+
+  theme:
+    default: system
+    displayToggle: true
+  
+  externalLinkDecoration: true
+
+  images:
+    - "assets/og.png"
+
+menu:
+  main:
+    - name: Try it!
+      weight: 1
+      url: https://lite-xl.com/playground/
+    - name: Set Up
+      pageRef: /setup/getting-started
+      weight: 10
+    - name: User Guide
+      pageRef: /user-guide/introduction
+      weight: 20
+    - name: Developer Guide
+      pageRef: /developer-guide
+      weight: 30
+    - name: About
+      pageRef: /about/contributors
+      weight: 40
+    - name: Search
+      weight: 50
+      params:
+        type: search
+    - name: GitHub
+      weight: 60
+      url: https://github.com/lite-xl/lite-xl
+      params:
+        icon: tabler:brand-github
+    - name: Discord
+      weight: 70
+      url: https://discord.gg/RWzqC3nx7K
+      params:
+        icon: tabler:brand-discord
+    - name: Matrix
+      weight: 80
+      url: https://matrix.to/#/#lite-xl:matrix.org
+      params:
+        icon: tabler:brand-matrix
+    - name: Theme Toggle
+      weight: 90
+      params:
+        type: theme-toggle

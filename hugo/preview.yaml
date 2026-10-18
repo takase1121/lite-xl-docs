@@ -1,0 +1,13 @@
+params:
+  banner:
+    key: hugo-preview
+    message: "This is a preview of the new Lite XL website. The current website is [here](https://lite-xl.com/)."
+
+cascade:
+  - target:
+      kind: "{section,page}"
+    type: docs
+    noindex: true
+  - target:
+      kind: home
+    noindex: true

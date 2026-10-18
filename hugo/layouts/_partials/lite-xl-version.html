@@ -1,0 +1,9 @@
+{{- /*
+Returns the current Lite XL version: params.liteXLVersion (set in CI with
+HUGO_PARAMS_LITEXLVERSION), or the version the keymap was generated from.
+*/ -}}
+{{- $version := site.Params.liteXLVersion | default hugo.Data.keymaps.keymap.version -}}
+{{- if not $version -}}
+  {{- errorf "Lite XL version unknown: set HUGO_PARAMS_LITEXLVERSION" -}}
+{{- end -}}
+{{- return $version -}}
