@@ -70,11 +70,14 @@ toc: false
         subtitle=`Lite XL is completely scriptable with Lua.
         C is only used to communicate with the OS while Lua is used for everything else.`
   >}}
-  {{< hextra/feature-card
+  {{< feature-card-custom
+      class="lxl:feature-card-ext-link"
       icon="desktop-computer"
       title="Portable"
         subtitle=`Lite XL runs on many platforms, including Windows, Linux, macOS, FreeBSD,
-        Android, AmigaOS & MorphOS, and the Web!`
+        [Android](https://github.com/adamharrison/lite-xl-android "Lite XL Android port by Adam"),
+        [AmigaOS & MorphOS](https://git.walkero.gr/walkero/lite-xl "AmigaOS & MorphOS port by Walkero"),
+        and [the Web](https://lite-xl.com/playground/ "Lite XL directly in the browser")!`
   >}}
   {{< hextra/feature-card
       icon="puzzle"

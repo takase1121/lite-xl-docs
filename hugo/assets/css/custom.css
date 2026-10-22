@@ -375,6 +375,10 @@ html:not(.dark) .only-dark {
   color: var(--hx-color-primary-600);
 }
 
+.lxl\:feature-card-custom.lxl\:feature-card-ext-link a {
+  color: var(--hx-color-primary-600);
+}
+
 /* -- nav bar -- */
 .hextra-nav-container .hextra-search-trigger {
   margin-left: auto;
