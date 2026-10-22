@@ -49,8 +49,8 @@ params:
     displayTitle: true
     displayLogo: true
     logo:
-      path: assets/icon.svg
-      dark: assets/icon.svg
+      path: favicon.svg
+      dark: favicon.svg
     width: wide
 
   page:
