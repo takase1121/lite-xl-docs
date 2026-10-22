@@ -369,3 +369,12 @@ html:not(.dark) .only-dark {
 .section-pages-cards .hextra-card>* {
   margin-top: 0;
 }
+
+/* -- nav bar -- */
+.hextra-nav-container .hextra-search-trigger {
+  margin-left: auto;
+}
+
+.hextra-nav-container a:first-child {
+  margin-right: 1em;
+}
