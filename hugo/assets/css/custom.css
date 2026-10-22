@@ -285,7 +285,7 @@ html.dark .downloads-card {
 }
 
 .downloads-card a {
-  color: var(--hextra-link-color, #3b82f6);
+  color: var(--hx-color-primary-600);
 }
 
 .downloads-card a svg,
@@ -368,6 +368,11 @@ html:not(.dark) .only-dark {
 /* -- section pages card -- */
 .section-pages-cards .hextra-card>* {
   margin-top: 0;
+}
+
+/* -- custom card -- */
+.lxl\:feature-card-custom .lxl\:feature-card-ctr {
+  color: var(--hx-color-primary-600);
 }
 
 /* -- nav bar -- */

@@ -93,23 +93,26 @@ toc: false
 </div>
 
 {{< hextra/feature-grid >}}
-  {{< hextra/feature-card
+  {{< feature-card-custom
       icon="download" 
       title="Install"
       link="setup/getting-started"
       subtitle=`Learn how to install Lite XL from the official release,
         package managers and from source.`
+      ctr="Set up"
     >}}
-  {{< hextra/feature-card
+  {{< feature-card-custom
       icon="terminal"
       title="Customize"
       link="user-guide/introduction"
       subtitle="Learn how to use Lite XL and customize it to suit your needs."
+      ctr="User Guide"
   >}}
-  {{< hextra/feature-card
+  {{< feature-card-custom
       icon="book-open"
       title="Learn"
       link="developer-guide"
       subtitle="Learn how to add functionality to Lite XL by writing themes and plugins!"
+      ctr="Developer Guide"
   >}}
 {{< /hextra/feature-grid >}}
