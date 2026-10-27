@@ -87,7 +87,7 @@ params:
 
   theme:
     default: system
-    displayToggle: true
+    displayToggle: false
   
   externalLinkDecoration: true
 
