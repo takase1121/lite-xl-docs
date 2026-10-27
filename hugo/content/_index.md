@@ -7,9 +7,9 @@ toc: false
 
 <div class="home-hero">
 
-{{< hextra/hero-headline >}}
+<h1 class="not-prose hx:text-4xl hx:font-bold hx:leading-none hx:tracking-tighter hx:md:text-5xl hx:py-2 hx:text-gray-700 hx:dark:text-gray-300">
   Fast, Lightweight and Powerful&nbsp;<br class="hx:sm:block hx:hidden" />Text-Editing Experience
-{{< /hextra/hero-headline >}}
+</h1>
 
 {{< hextra/hero-subtitle >}}
   A simple, fast, feature-filled and extremely extensible text editor
@@ -41,9 +41,9 @@ toc: false
 </div>
 
 <div class="home-section-header">
-{{< hextra/hero-section >}}
+<h2 class="not-prose hx:text-4xl hx:font-bold hx:leading-none hx:tracking-tighter hx:md:text-3xl hx:py-2 hx:text-gray-700 hx:dark:text-gray-300">
   All the things you want for editing.
-{{< /hextra/hero-section >}}
+</h2>
 </div>
 
 {{< hextra/feature-grid >}}
@@ -90,9 +90,9 @@ toc: false
 
 
 <div class="home-section-header">
-{{< hextra/hero-section >}}
+<h2 class="not-prose hx:text-4xl hx:font-bold hx:leading-none hx:tracking-tighter hx:md:text-3xl hx:py-2 hx:text-gray-700 hx:dark:text-gray-300">
   Let's get started.
-{{< /hextra/hero-section >}}
+</h2>
 </div>
 
 {{< hextra/feature-grid >}}
