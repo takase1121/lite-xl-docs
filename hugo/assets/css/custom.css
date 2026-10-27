@@ -373,6 +373,7 @@ html:not(.dark) .only-dark {
 /* -- custom card -- */
 .lxl\:feature-card-custom .lxl\:feature-card-ctr {
   color: var(--hx-color-primary-600);
+  width: fit-content;
 }
 
 .lxl\:feature-card-custom.lxl\:feature-card-ext-link a {
